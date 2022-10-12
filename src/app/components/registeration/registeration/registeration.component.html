@@ -1,0 +1,17 @@
+<h3>Registeration</h3>
+<div>
+  <label>Name :</label>
+  <input type="text" [(ngModel)]="studentName" />
+  <div style=" border: 0ch; color: red;" *ngIf="studentName.length <3&& studentName !='' ">
+    Length &gt; 3
+  </div>
+  <label>Age :</label>
+  <input type="number"  [(ngModel)]="studentAge"/>
+  <div style=" border: 0ch; color: red;" *ngIf="studentAge >40 ">
+    Age Not Valid
+  </div>
+  <div style=" border: 0ch; color: red;" *ngIf="studentAge <20 &&studentAge !=0  ">
+    Age Not Valid
+  </div>
+  <input type="button" value="Add student" (click)="AddStudent()"/>
+</div>
