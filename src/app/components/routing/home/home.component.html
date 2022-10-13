@@ -1,0 +1,24 @@
+<h3>Registeration</h3>
+<form [formGroup]= "myRegFormValidation" class="form" (ngSubmit)="sendData()">
+  <div>
+  <label>Name :</label>
+  <input formControlName="name" type="text" />
+  <div style="background-color: rgb(226, 156, 156);" *ngIf=" !NameValid">
+   <pre style="color: red; ">Name Required</pre>
+  </div>
+
+  <label>Age :</label>
+  <input formControlName="age" type="number" />
+  <div style="background-color: rgb(226, 156, 156);" *ngIf=" !AgeValid">
+    <pre style="color: red; "> 20 < Age < 40 </pre>
+   </div>
+
+  <label>Email :</label>
+  <input  formControlName="email" type="text" />
+  <div style="background-color: rgb(226, 156, 156);" *ngIf=" !EmailValid">
+    <pre style="color: red; ">Invalid Email Format</pre>
+   </div>
+
+  <input type="submit" value="Add student"/>
+  </div>
+</form>
